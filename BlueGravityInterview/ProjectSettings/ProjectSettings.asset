@@ -153,7 +153,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.BlueGravityInterview
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -696,7 +697,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   cloudProjectId: fcc82979-4202-4b4b-9235-515b7b551e19
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
