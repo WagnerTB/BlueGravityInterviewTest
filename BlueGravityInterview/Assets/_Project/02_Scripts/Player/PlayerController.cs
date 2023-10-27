@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Currency;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using InventorySystem;
+using Items;
 
 namespace Player
 {
@@ -26,13 +28,16 @@ namespace Player
 
         [SerializeField]
         private Inventory _inventory;
+
+        [SerializeField]
+        private CurrencyController _currencyController;
         
         [SerializeField]
         private CinemachineVirtualCamera _vCam;
 
+        private Vector2 movementVector;
         private float movementX;
         private float movementY;
-        private Vector2 movementVector;
 
         private void Awake()
         {
@@ -64,6 +69,19 @@ namespace Player
             _playerInteraction.CheckInteractions();
             
             _playerAnimation.Move(movementVector);
+        }
+
+        public void AddItem(Item item)
+        {
+            switch (item.Type)
+            {
+                case ItemType.Common:
+                    _inventory.AddItem(item);
+                    break;
+                case ItemType.Currency:
+                    _currencyController.AddCurrency(item.Amount);
+                    break;
+            }
         }
     }
 }

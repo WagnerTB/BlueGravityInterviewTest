@@ -28,7 +28,7 @@ namespace Items
 
         public void BeginInteract()
         {
-            PlayerController.Instance.Inventory.AddItem(_loadedItem);
+            PlayerController.Instance.AddItem(_loadedItem);
             Destroy(gameObject);
         }
 

@@ -69,9 +69,7 @@ namespace Interaction
 
                 if (!_loot.Contains(item))
                 {
-                    var itemLoader = Instantiate(_itemLoaderPrefab);
-                    itemLoader.SetupItem(item);
-                    _loot.Add(item);
+                    _loot.Add(Instantiate(item));
                     itemsChoosed++;
                 }
 
