@@ -13,6 +13,9 @@ namespace Player
         private PlayerMovement _playerMovement;
 
         [SerializeField]
+        private PlayerInteraction _playerInteraction;
+
+        [SerializeField]
         private CinemachineVirtualCamera _vCam;
 
         private float movementX;
@@ -26,9 +29,15 @@ namespace Player
             movementY = movementVector.y;
         }
 
+        private void OnInteract()
+        {
+            _playerInteraction.Interact();
+        }
+        
         private void FixedUpdate()
         {
             _playerMovement.Move(movementVector);
+            _playerInteraction.CheckInteractions();
         }
     }
 }
