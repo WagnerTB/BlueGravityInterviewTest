@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20c90ff4a464198bc79521f8e13b104, type: 3}
   m_Name: Body 3
   m_EditorClassIdentifier: 
-  ItemName: Body 2
-  Sprite: {fileID: 21300000, guid: 90458a12b047bb84ba77cb7ea81ba457, type: 3}
+  ItemName: Body 3
+  Sprite: {fileID: 21300000, guid: 124013dbba7f284489ac16156c930131, type: 3}
   Type: 2
   IsStackable: 0
   Amount: 1

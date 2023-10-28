@@ -17,7 +17,7 @@ MonoBehaviour:
   Type: 2
   IsStackable: 0
   Amount: 1
-  BuyAmount: 150
+  BuyAmount: 112
   SellAmount: 100
   ItemSlotType: 2
   IsDefaultItem: 0

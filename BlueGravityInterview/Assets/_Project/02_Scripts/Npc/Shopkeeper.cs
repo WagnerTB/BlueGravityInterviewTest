@@ -16,6 +16,9 @@ namespace Npc
         private Inventory _inventory;
 
         [SerializeField]
+        private InteractionTip _interactionTip;
+        
+        [SerializeField]
         private Transform _npcItemsParent;
         [SerializeField]
         private Transform _playerItemsParent;
@@ -87,10 +90,12 @@ namespace Npc
 
         public void EnterInRange()
         {
+            _interactionTip.SetEnabled(true);
         }
 
         public void ExitRange()
         {
+            _interactionTip.SetEnabled(false);
         }
 
         public Transform GetTransform()

@@ -14,6 +14,9 @@ namespace Items
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
+        [SerializeField]
+        private InteractionTip _interactionTip;
+
         public void SetupItem(Item item)
         {
             _loadedItem = Instantiate(item);
@@ -43,10 +46,13 @@ namespace Items
 
         public void EnterInRange()
         {
+            _interactionTip.SetEnabled(true);
         }
 
         public void ExitRange()
-        {
+        { 
+            if(this != null)
+                _interactionTip.SetEnabled(false);
         }
 
         public Transform GetTransform()

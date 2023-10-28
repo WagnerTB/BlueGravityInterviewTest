@@ -18,6 +18,9 @@ namespace Interaction
         [SerializeField]
         private int _itemsPerLoot = 2;
 
+        [SerializeField]
+        private InteractionTip _interactionTip;
+
         private bool _canLoot = true;
         private static readonly int Open = Animator.StringToHash("Open");
         private List<Item> _loot = new List<Item>();
@@ -41,10 +44,12 @@ namespace Interaction
 
         public void EnterInRange()
         {
+            _interactionTip.SetEnabled(true);
         }
 
         public void ExitRange()
         {
+            _interactionTip.SetEnabled(false);
         }
 
         private void RandomizeLoot()
@@ -60,17 +65,20 @@ namespace Interaction
                 var rndIndex = UnityEngine.Random.Range(0, _itemsPool.Length);
                 var item = _itemsPool[rndIndex];
                 
-                if ((_loot.Contains(item) && item.IsStackable))
+                if ((_loot.Find(x => x.Sprite == item.Sprite) && item.IsStackable))
                 {
                     item = _loot.Find(x => x.Sprite == item.Sprite);
                     item.Amount++;
                     itemsChoosed++;
+                    continue;
                 }
 
-                if (!_loot.Contains(item))
+                if (!_loot.Find(x => x.Sprite == item.Sprite))
                 {
                     _loot.Add(Instantiate(item));
                     itemsChoosed++;
+                    continue;
+
                 }
 
                 attempt++;
