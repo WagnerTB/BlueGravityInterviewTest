@@ -515,7 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySize: 10
   _items:
-  - {fileID: 11400000, guid: dba3c3c81ad4cbd4a84f9b7c52616839, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Util
 {
+#if UNITY_EDITOR
+    
     public class RectTransformUtil : MonoBehaviour
     {
         [MenuItem("Tools/UI/Anchor Around Object")]
@@ -38,4 +40,6 @@ namespace Util
             }
         }
     }
+#endif
+
 }
