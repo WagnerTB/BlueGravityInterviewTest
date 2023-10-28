@@ -15,6 +15,9 @@ namespace Player
     {
         public static PlayerController Instance => _instance;
         public EquipmentInventory EquipmentInventory => _inventory;
+        public CurrencyController CurrencyController => _currencyController;
+
+        public PlayerInteraction Interaction => _playerInteraction;
 
         private static PlayerController _instance;
         
@@ -70,7 +73,7 @@ namespace Player
         private void OnToggleInventory()
         {
             bool isShowing = _inventoryUI.ToggleInventory();
-            _playerMovement.SetCanMove(isShowing);
+            _playerMovement.SetCanMove(!isShowing);
         }
         
         private void FixedUpdate()

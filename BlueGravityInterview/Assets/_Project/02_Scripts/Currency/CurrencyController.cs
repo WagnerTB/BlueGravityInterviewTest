@@ -8,24 +8,31 @@ namespace Currency
     {
         public static CurrencyController Instance => _instance;
         private static CurrencyController _instance;
-        
-        public delegate void CurrencyEvents(int amount, bool isAdding);
-        
+
+        public delegate void CurrencyEvents(int amount, bool isAdding, int finalAmount);
+
         public CurrencyEvents OnCurrencyChanged;
 
         [SerializeField]
         private Item _currencyItem;
 
-
         private void Awake()
         {
-            _currencyItem = Instantiate(_currencyItem);
+            if (_instance == null)
+            {
+                _instance = this;
+                _currencyItem = Instantiate(_currencyItem);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void AddCurrency(int amount)
         {
             _currencyItem.Amount += amount;
-            OnCurrencyChanged?.Invoke(amount, true);
+            OnCurrencyChanged?.Invoke(amount, true, _currencyItem.Amount);
         }
 
         public void RemoveCurrency(int amount)
@@ -33,7 +40,7 @@ namespace Currency
             if (_currencyItem.Amount - amount >= 0)
             {
                 _currencyItem.Amount -= amount;
-                OnCurrencyChanged?.Invoke(amount, false);
+                OnCurrencyChanged?.Invoke(amount, false, _currencyItem.Amount);
             }
         }
 

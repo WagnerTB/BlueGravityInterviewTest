@@ -27,7 +27,11 @@ namespace Player
 
         public void Move(Vector2 direction)
         {
-            if(!_canMove) return;
+            if (!_canMove)
+            {
+                _rb.velocity = Vector2.zero;
+                return;
+            }
             
             Vector2 targetPosition = _trs.TransformPoint(direction);
             var position = _trs.position;

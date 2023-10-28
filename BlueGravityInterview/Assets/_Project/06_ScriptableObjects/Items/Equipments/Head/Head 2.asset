@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20c90ff4a464198bc79521f8e13b104, type: 3}
+  m_Name: Head 2
+  m_EditorClassIdentifier: 
+  ItemName: Default Head
+  Sprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
+  Type: 2
+  IsStackable: 0
+  Amount: 1
+  BuyAmount: 150
+  SellAmount: 100
+  ItemSlotType: 1
+  IsDefaultItem: 1
+  hoodSprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
+  faceSprite: {fileID: 21300000, guid: 518ab34707033904cb1d99dbfcc9f4bb, type: 3}
+  shoulderLeft: {fileID: 0}
+  shoulderRight: {fileID: 0}
+  elbowLeft: {fileID: 0}
+  elbowRight: {fileID: 0}
+  torso: {fileID: 0}
+  legLeft: {fileID: 0}
+  legRight: {fileID: 0}
+  bootLeft: {fileID: 0}
+  bootRight: {fileID: 0}
