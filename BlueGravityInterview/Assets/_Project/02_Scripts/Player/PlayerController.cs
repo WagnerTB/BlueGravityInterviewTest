@@ -7,13 +7,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using InventorySystem;
 using Items;
+using UI;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController Instance => _instance;
-        public Inventory Inventory => _inventory;
+        public EquipmentInventory EquipmentInventory => _inventory;
 
         private static PlayerController _instance;
         
@@ -27,7 +28,10 @@ namespace Player
         private PlayerAnimation _playerAnimation;
 
         [SerializeField]
-        private Inventory _inventory;
+        private EquipmentInventory _inventory;
+
+        [SerializeField]
+        private InventoryUI _inventoryUI;
 
         [SerializeField]
         private CurrencyController _currencyController;
@@ -61,6 +65,12 @@ namespace Player
         private void OnInteract()
         {
             _playerInteraction.Interact();
+        }
+
+        private void OnToggleInventory()
+        {
+            bool isShowing = _inventoryUI.ToggleInventory();
+            _playerMovement.SetCanMove(isShowing);
         }
         
         private void FixedUpdate()

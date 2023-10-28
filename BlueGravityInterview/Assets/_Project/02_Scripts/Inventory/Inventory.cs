@@ -19,9 +19,14 @@ namespace InventorySystem
 
         private void Awake()
         {
-            for (int i = 0; i < _inventorySize; i++)
+            int difference = _inventorySize - _items.Count;
+
+            if (difference > 0)
             {
-                _items.Add(null);
+                for (int i = 0; i < difference; i++)
+                {
+                    _items.Add(null);
+                }
             }
         }
 

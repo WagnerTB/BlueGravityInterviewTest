@@ -34,5 +34,10 @@ namespace Player
             Vector2 pos = Vector2.SmoothDamp(position, targetPosition, ref _currentVelocity, _smoothTime * Time.deltaTime);
             _rb.velocity = (pos - (Vector2)position) / Time.deltaTime;
         }
+
+        public void SetCanMove(bool canMove)
+        {
+            _canMove = canMove;
+        }
     }
 }

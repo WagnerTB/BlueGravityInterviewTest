@@ -5,7 +5,8 @@ namespace Items
     public enum ItemType
     {
         Common,
-        Currency
+        Currency,
+        Equipment
     }
     
     [CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObject/Item/New Item", order = 0)]
